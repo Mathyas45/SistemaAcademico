@@ -1,7 +1,7 @@
 <?php
 include('../../app/config.php');
 include('../layout/parte1.php');
-include('../../app/controladores/roles/rolesListadoControlador.php')
+include('../../app/controladores/usuarios/usuariosListadoControlador.php')
 ?>
 
 
@@ -10,7 +10,7 @@ include('../../app/controladores/roles/rolesListadoControlador.php')
     <!-- Main content -->
     <div class="container-fluid">
         <br>
-        <h1 class="ml-4">Listado de Roles</h1>
+        <h1 class="ml-4">Listado de Usuarios</h1>
 
 
         <br>
@@ -20,9 +20,9 @@ include('../../app/controladores/roles/rolesListadoControlador.php')
             <div class="col-md-10">
                 <div class="card card-outline card-primary">
                     <div class="card-header">
-                        <h3 class="card-title">Roles Registrados</h3>
+                        <h3 class="card-title">Usuarios Registrados</h3>
                         <div class="card-tools">
-                            <a href="create.php" class="btn btn-primary"><i class="bi bi-plus-lg"></i> Crear nuevo Rol</a>
+                            <a href="create.php" class="btn btn-primary"><i class="bi bi-plus-lg"></i> Crear nuevo Usuario</a>
                         </div>
                     </div>
                     <div class="card-body">
@@ -31,25 +31,33 @@ include('../../app/controladores/roles/rolesListadoControlador.php')
                             <thead>
                                 <tr>
                                     <th>Nro</th>
-                                    <th>Nombre Rol</th>
+                                    <th>Nombre del usuario</th>
+                                    <th>Rol</th>
+                                    <th>E-mail</th>
+                                    <th>Fecha de creación</th>
+                                    <th>Estado</th>
                                     <th style="text-align: center;">Acciones</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <?php
                                 $contador = 1;
-                                foreach ($roles as $role) {
-                                    $id_rol = $role['id_rol'];
+                                foreach ($usuarios as $usuario) {
+                                    $id_usuario = $usuario['id_usuario'];
                                 ?>
                                     <tr>
                                         <td><?= $contador++; ?></td>
-                                        <td><?= $role['nombre_rol']; ?></td>
+                                        <td><?= $usuario['nombres']; ?></td>
+                                        <td><?= $usuario['nombre_rol']; ?></td>
+                                        <td><?= $usuario['email']; ?></td>
+                                        <td><?= $usuario['fyh_creacion']; ?></td>
+                                        <td><?= $usuario['estado']; ?></td>
                                         <td>
                                             <center>
                                                 <div class="btn-group" role="group" aria-label="Basic mixed styles example">
-                                                    <a href="show.php?id=<?= $id_rol; ?>" type="button" class="btn btn-success"><i class="bi bi-eye-fill"></i> Ver</a>
-                                                    <a href="edit.php?id=<?= $id_rol; ?>" type="button" class="btn btn-warning"><i class="bi bi-pencil-fill"></i> Editar</a>
-                                                    <a href="#" class="btn btn-danger" onclick="confirmarEliminacion(<?php echo $id_rol; ?>);">
+                                                    <a href="show.php?id=<?= $id_usuario; ?>" type="button" class="btn btn-success"><i class="bi bi-eye-fill"></i> Ver</a>
+                                                    <a href="edit.php?id=<?= $id_usuario; ?>" type="button" class="btn btn-warning"><i class="bi bi-pencil-fill"></i> Editar</a>
+                                                    <a href="#" class="btn btn-danger" onclick="confirmarEliminacion(<?php echo $id_usuario; ?>);">
                                                         <i class="bi bi-trash3-fill"></i> Eliminar
                                                     </a>
 
@@ -105,12 +113,12 @@ include('../../layout/mensajes.php');
             "pageLength": 10,
             "language": {
                 "emptyTable": "No hay información",
-                "info": "Mostrando _START_ a _END_ de _TOTAL_ Roles",
+                "info": "Mostrando _START_ a _END_ de _TOTAL_ Usuarios",
                 "infoEmpty": "Mostrando 0 a 0 de 0 Productos",
-                "infoFiltered": "(Filtrado de _MAX_ total Roles)",
+                "infoFiltered": "(Filtrado de _MAX_ total Usuarios)",
                 "infoPostFix": "",
                 "thousands": ",",
-                "lengthMenu": "Mostrar _MENU_ Roles",
+                "lengthMenu": "Mostrar _MENU_ Usuarios",
                 "loadingRecords": "Cargando...",
                 "processing": "Procesando...",
                 "search": "Buscador:",
