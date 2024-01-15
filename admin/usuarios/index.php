@@ -91,7 +91,7 @@ include('../../layout/mensajes.php');
 
 ?>
 <script>
-    function confirmarEliminacion(id_rol) {
+    function confirmarEliminacion(id_usuario) {
         Swal.fire({
             title: "¿Seguro que desea eliminar?",
             icon: "question",
@@ -103,7 +103,7 @@ include('../../layout/mensajes.php');
         }).then((result) => {
             if (result.isConfirmed) {
                 // Redirecciona al archivo que maneja la eliminación
-                window.location.href = "delete.php?id_rol=" + id_rol;
+                window.location.href = "delete.php?id_usuario=" + id_usuario;
             }
         });
         return false; // Evita el comportamiento predeterminado del enlace

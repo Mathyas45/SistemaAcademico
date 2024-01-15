@@ -85,7 +85,7 @@ include('../../layout/mensajes.php');
 <script>
     function confirmarEliminacion(id_rol) {
         Swal.fire({
-            title: "¿Seguro que desea eliminar?",
+            title: "¿Seguro que desea eliminar? Ten en cuenta si eliminas este rol se eliminara todos los usuarios con ese rol",
             icon: "question",
             iconHtml: "?",
             cancelButtonText: "No",
