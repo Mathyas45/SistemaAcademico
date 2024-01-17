@@ -166,11 +166,39 @@ if (isset($_SESSION['sesion_email'])) {
                                         <p>Listado de usuarios</p>
                                     </a>
                                 </li>
-                               
+
                             </ul>
                         </li>
                         <li class="nav-item">
-                            <a href="<?= APP_URL;?>/login/logout.php" class="nav-link bg-danger">
+                            <a href="#" class="nav-link active">
+                                <i class="nav-icon fas"><i class="bi bi-bookshelf"></i></i>
+                                <p>
+                                    Niveles
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="<?= APP_URL ?>/admin/niveles" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Listado de niveles</p>
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a href="<?= APP_URL ?>/admin/configuraciones" class="nav-link active">
+                                <i class="nav-icon fas"><i class="bi bi-gear-fill"></i></i>
+                                <p>
+                                    Configuraciones
+
+                                </p>
+                            </a>
+
+                        </li>
+                        <li class="nav-item">
+                            <a href="<?= APP_URL; ?>/login/logout.php" class="nav-link bg-danger">
                                 <i class="nav-icon fas"><i class="bi bi-door-open-fill"></i></i>
                                 <p>
                                     Cerrar sesión
