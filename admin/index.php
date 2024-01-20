@@ -4,6 +4,8 @@ include('layout/parte1.php');
 include('../app/controladores/roles/rolesListadoControlador.php');
 include('../app/controladores/usuarios/usuariosListadoControlador.php');
 include('../app/controladores/niveles/nivelesListadoControlador.php');
+include('../app/controladores/grados/gradosListadoControlador.php');
+include('../app/controladores/materias/materiasListadoControlador.php');
 ?>
 
 
@@ -33,7 +35,7 @@ include('../app/controladores/niveles/nivelesListadoControlador.php');
                         <div class="icon">
                             <i class="fas"><i class="fa-solid fa-layer-group"></i></i>
                         </div>
-                        <a href="<?= APP_URL;?>/admin/roles" class="small-box-footer">Más informormación <i class="fas fa-arrow-circle-right"></i></a>
+                        <a href="<?= APP_URL; ?>/admin/roles" class="small-box-footer">Más información <i class="fas fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
                 <div class="col-lg-3 col-6 ">
@@ -51,7 +53,7 @@ include('../app/controladores/niveles/nivelesListadoControlador.php');
                         <div class="icon">
                             <i class="fas"><i class="bi bi-people-fill"></i></i>
                         </div>
-                        <a href="<?= APP_URL;?>/admin/usuarios" class="small-box-footer">Más informormación <i class="fas fa-arrow-circle-right"></i></a>
+                        <a href="<?= APP_URL; ?>/admin/usuarios" class="small-box-footer">Más información <i class="fas fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
                 <div class="col-lg-3 col-6 ">
@@ -67,11 +69,50 @@ include('../app/controladores/niveles/nivelesListadoControlador.php');
                             <p>Niveles registrados</p>
                         </div>
                         <div class="icon">
-                            <i class="fas"><i class="bi bi-bookshelf"></i></i>
+                            <i class="fas"><i class="fas fa-school"></i></i>
                         </div>
-                        <a href="<?= APP_URL;?>/admin/niveles" class="small-box-footer">Más informormación <i class="fas fa-arrow-circle-right"></i></a>
+                        <a href="<?= APP_URL; ?>/admin/niveles" class="small-box-footer">Más información <i class="fas fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
+                <div class="col-lg-3 col-6 ">
+                    <div class="small-box bg-warning">
+                        <div class="inner">
+                            <?php
+                            $contador = 0;
+                            foreach ($grados as $grado) {
+                                $contador++;
+                            }
+                            ?>
+                            <h3><?= $contador ?></h3>
+                            <p>Grados registrados</p>
+                        </div>
+                        <div class="icon">
+                            <i class="fas"><i class="fas fa-school"></i></i>
+                        </div>
+                        <a href="<?= APP_URL; ?>/admin/niveles" class="small-box-footer">Más información <i class="fas fa-arrow-circle-right"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="row ml-4">
+                <div class="col-lg-3 col-6 ">
+                    <div class="small-box bg-secondary">
+                        <div class="inner">
+                            <?php
+                            $contador = 0;
+                            foreach ($materias as $materias) {
+                                $contador++;
+                            }
+                            ?>
+                            <h3><?= $contador ?></h3>
+                            <p>Materias registradas</p>
+                        </div>
+                        <div class="icon">
+                            <i class="fas"><i class="bi bi-journals"></i></i>
+                        </div>
+                        <a href="<?= APP_URL; ?>/admin/materias---------" class="small-box-footer">Más información <i class="fas fa-arrow-circle-right"></i></a>
+                    </div>
+                </div>
+
             </div>
             <!-- /.row -->
         </div><!-- /.container-fluid -->
