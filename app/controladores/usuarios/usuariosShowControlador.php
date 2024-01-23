@@ -5,7 +5,6 @@ $query_usuarios = $pdo->prepare($sql_usuarios);
 $query_usuarios->execute();
 $datos_usuarios = $query_usuarios->fetchAll(PDO::FETCH_ASSOC);
 foreach ($datos_usuarios as $datos_usuario) {
-    $nombres = $datos_usuario['nombres'];
     $nombre_rol = $datos_usuario['nombre_rol'];
     $email = $datos_usuario['email'];
     $password = $datos_usuario['password'];

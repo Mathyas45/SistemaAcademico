@@ -224,6 +224,44 @@ if (isset($_SESSION['sesion_email'])) {
                             </ul>
                         </li>
                         <li class="nav-item">
+                            <a href="#" class="nav-link active">
+                                <i class="nav-icon fas"><i class="bi bi-person-lines-fill"></i>
+                                </i>
+                                <p>
+                                    Personal administrativo
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="<?= APP_URL ?>/admin/administrativos" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Listado de P. Administrativo</p>
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link active">
+                                <i class="nav-icon fas"><i class="bi bi-person-workspace"></i>
+                                </i>
+                                <p>
+                                    Docentes
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="<?= APP_URL ?>/admin/docentes" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Listado de Docenteso</p>
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </li>
+                        <li class="nav-item">
                             <a href="<?= APP_URL ?>/admin/configuraciones" class="nav-link active">
                                 <i class="nav-icon fas"><i class="bi bi-gear-fill"></i></i>
                                 <p>

@@ -12,14 +12,14 @@ include('../../app/controladores/usuarios/usuariosShowControlador.php')
     <!-- Main content -->
     <div class="container-fluid">
         <br>
-        <h1 class="ml-4">Observar Usuario: <?= $nombres; ?> </h1>
+        <h1 class="ml-4">Observar Usuario: <?= $email; ?> </h1>
 
 
         <br>
 
         <div class="row">
             <div class="col-md-1"></div>
-            <div class="col-md-6">
+            <div class="col-md-5">
                 <div class="card card-outline card-success">
                     <div class="card-header">
                         <h3 class="card-title">Datos Registrados</h3>
@@ -27,20 +27,15 @@ include('../../app/controladores/usuarios/usuariosShowControlador.php')
                     </div>
                     <div class="card-body">
                         <div class="row">
-                            <div class="col-md-4">
+                            <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="">Nombre Rol</label>
                                     <input type="text" class="form-control text-uppercase" name="rol" value="<?= $nombre_rol; ?>" disabled>
 
                                 </div>
                             </div>
-                            <div class="col-md-4">
-                                <div class="form-group">
-                                    <label for="">Nombre Completo del usuario</label>
-                                    <input type="text" class="form-control text-uppercase" name="nombres" disabled value=" <?= $nombres ?>">
-                                </div>
-                            </div>
-                            <div class="col-md-4">
+                           
+                            <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="">Correo Electrónico</label>
                                     <input type="email" class="form-control " name="email" disabled value=" <?= $email ?>">
@@ -48,7 +43,7 @@ include('../../app/controladores/usuarios/usuariosShowControlador.php')
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-md-4">
+                            <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="">Fecha de Creación</label>
                                     <input type="email" class="form-control " name="email" disabled value=" <?= $fyh_creacion ?>">

@@ -109,7 +109,7 @@ include('../app/controladores/materias/materiasListadoControlador.php');
                         <div class="icon">
                             <i class="fas"><i class="bi bi-journals"></i></i>
                         </div>
-                        <a href="<?= APP_URL; ?>/admin/materias---------" class="small-box-footer">Más información <i class="fas fa-arrow-circle-right"></i></a>
+                        <a href="<?= APP_URL; ?>/admin/materias" class="small-box-footer">Más información <i class="fas fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
 

@@ -74,6 +74,8 @@ VALUES ('1','2023-12-20 20:29:10','1');
 CREATE TABLE docentes(
     id_docentes int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
     persona_id int(11) NOT NULL,
+    especialidad varchar(255)  NULL,
+    antiguedad varchar(255)  NULL,
 
     fyh_creacion DATETIME NULL,
     fyh_actualizacion DATETIME NULL,
@@ -82,8 +84,8 @@ CREATE TABLE docentes(
     FOREIGN KEY(persona_id) REFERENCES personas(id_persona) on delete cascade on update cascade
 
 )ENGINE=InnoDB;
-INSERT INTO docentes(persona_id, fyh_creacion, estado)
-VALUES ('2','2023-12-20 20:29:10','1');
+INSERT INTO docentes(persona_id, fyh_creacion,especialidad,antiguedad, estado)
+VALUES ('2','2023-12-20 20:29:10','geometria,algebra','22-01-2024','1');
 
 
 CREATE TABLE estudiantes(

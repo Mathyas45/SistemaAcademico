@@ -41,12 +41,7 @@ include('../../app/controladores/roles/RolesListadoControlador.php')
                                         </select>
                                     </div>
                                 </div>
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        <label for="">Nombre Completo del usuario</label>
-                                        <input type="text" class="form-control text-uppercase" name="nombres" required placeholder="Ingrese el nombre del usuario">
-                                    </div>
-                                </div>
+                            
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label for="">Correo Electrónico</label>

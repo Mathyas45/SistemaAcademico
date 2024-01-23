@@ -2,7 +2,6 @@
 include('../../config.php');
 
 $id_usuario = $_POST['id_usuario'];
-$nombres = $_POST['nombres'];
 $rol_id = $_POST['rol_id'];
 $email = $_POST['email'];
 $password = $_POST['password'];
@@ -11,10 +10,8 @@ $estado_del_registro = '1';
 
 if ($password == "" && $password_repeat == "") {
 
-    $sentencia = $pdo->prepare("UPDATE usuarios SET nombres = :nombres, rol_id = :rol_id, email=:email,fyh_actualizacion=:fyh_actualizacion
-        WHERE id_usuario=:id_usuario");
+    $sentencia = $pdo->prepare("UPDATE usuarios SET rol_id = :rol_id, email=:email, fyh_actualizacion=:fyh_actualizacion WHERE id_usuario=:id_usuario ");
 
-    $sentencia->bindParam(':nombres', $nombres);
     $sentencia->bindParam(':rol_id', $rol_id);
     $sentencia->bindParam(':email', $email);
     $sentencia->bindParam(':fyh_actualizacion', $fechayhora);
@@ -44,10 +41,9 @@ if ($password == "" && $password_repeat == "") {
                 if ($password == $password_repeat) {
                     $password = password_hash($password, PASSWORD_DEFAULT);
 
-                    $sentencia = $pdo->prepare("UPDATE usuarios SET nombres = :nombres, rol_id = :rol_id, email=:email, password=:password,fyh_actualizacion=:fyh_actualizacion
+                    $sentencia = $pdo->prepare("UPDATE usuarios SET rol_id = :rol_id, email=:email, password=:password,fyh_actualizacion=:fyh_actualizacion
                     WHERE id_usuario=:id_usuario");
 
-                    $sentencia->bindParam(':nombres', $nombres);
                     $sentencia->bindParam(':rol_id', $rol_id);
                     $sentencia->bindParam(':email', $email);
                     $sentencia->bindParam(':password', $password);

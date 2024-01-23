@@ -10,15 +10,35 @@
 <!-- Main Footer -->
 <footer class="main-footer">
     <!-- To the right -->
+    <button class="float-right d-none d-sm-inline-block" id="modoNocturnoToggle" onclick="toggleModoNocturno()">Modo
+        Nocturno</button>
+
     <div class="float-right d-none d-sm-inline">
-        Anything you want
     </div>
     <!-- Default to the left -->
     <strong>Copyright &copy; <?= $anioActual ?> <a href="https://www.facebook.com/profile.php?id=100077584231290">Coax Inc</a>.</strong> Todos los derechos reservados.
 </footer>
 </div>
 <!-- ./wrapper -->
+<style>
+    /* Estilos para el modo diurno */
+    /* Puedes definir tus estilos normales aquí */
 
+    /* Estilos para el modo nocturno */
+    .dark-mode {
+        background-color: #333;
+        color: #fff;
+    }
+
+    /* Agrega estilos personalizados para elementos específicos en el modo nocturno */
+    .dark-mode .navbar {
+        background-color: #222;
+    }
+
+    .dark-mode .nav-link {
+        color: #fff;
+    }
+</style>
 <!-- REQUIRED SCRIPTS -->
 
 <!-- jQuery -->
@@ -42,5 +62,11 @@
 <script src="<?= APP_URL; ?>/public/plugins/datatables-buttons/js/buttons.print.min.js"></script>
 <script src="<?= APP_URL; ?>/public/plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
 </body>
+<script>
+    function toggleModoNocturno() {
+        // Agregar o quitar la clase 'dark-mode' del <body> según el estado actual
+        document.body.classList.toggle('dark-mode');
+    }
+</script>
 
 </html>

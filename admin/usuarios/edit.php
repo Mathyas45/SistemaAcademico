@@ -18,7 +18,7 @@ include('../../app/controladores/roles/rolesListadoControlador.php')
     <!-- Main content -->
     <div class="container-fluid">
         <br>
-        <h1 class="ml-5">Editar Usuario: <?= $nombres; ?> </h1>
+        <h1 class="ml-5">Editar Usuario: <?= $email; ?> </h1>
         <br>
 
         <div class="row">
@@ -32,9 +32,10 @@ include('../../app/controladores/roles/rolesListadoControlador.php')
                     <div class="card-body">
                         <form action="<?= APP_URL; ?>/app/controladores/usuarios/usuariosUpdateControlador.php" method="post">
                             <div class="row">
-                                <div class="col-md-4">
+                                <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="">Nombre Rol</label>
+                                        <input type="hidden" name="id_usuario" value="<?= $id_usuario; ?>">
                                         <a href="<?= APP_URL ?>/admin/roles/create.php" class="btn-inline-primary"><i class="bi bi-plus"></i>Nuevo Rol</a>
 
                                         <select class="form-control" name="rol_id">
@@ -48,18 +49,11 @@ include('../../app/controladores/roles/rolesListadoControlador.php')
                                         </select>
                                     </div>
                                 </div>
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        <label for="">Nombre Completo del usuario</label>
-                                        <input type="text" class="form-control text-uppercase" name="nombres" required value="<?= $nombres?>">
-                                        <!-- Rescatamos el id usuario que viene desde el get(buscador) para pasarlo al controlador y sepa que usuario actualizar -->
-                                        <input type="text" name="id_usuario" value="<?=$id_usuario;?>" hidden>
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
+                
+                                <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="">Correo Electrónico</label>
-                                        <input type="email" class="form-control" name="email" required value="<?= $email?>">
+                                        <input type="email" class="form-control" name="email" required value="<?= $email;?>">
                                     </div>
                                 </div>
                             </div>
@@ -82,16 +76,11 @@ include('../../app/controladores/roles/rolesListadoControlador.php')
                                 <div class="col-md-12 d-flex justify-content-between">
                                     <a href="index.php" class="btn btn-danger"><i class="bi bi-x-circle-fill"></i> Cancelar</a>
                                     <button type="submit" class="btn btn-warning"><i class="bi bi-floppy-fill"></i> Actualizar Usuario</button>
-
                                 </div>
-
                             </div>
                         </form>
 
-
                     </div>
-
-
 
                 </div>
             </div>
