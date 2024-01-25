@@ -37,9 +37,9 @@ include('../../app/controladores/docentes/docentesListadoControlador.php')
                                 <tr>
                                     <th>Nro</th>
                                     <th>Datos Completos</th>
-                                    <th>#dni</th>
+                                    <th>#Dni</th>
+                                    <th>Especialidad</th>
                                     <th>E-mail</th>
-                                    <th>Rol</th>
                                     <th>#celular</th>
                                     <th>estado</th>
                                     <th style="text-align: center;">Acciones</th>
@@ -48,20 +48,20 @@ include('../../app/controladores/docentes/docentesListadoControlador.php')
                             <tbody>
                                 <?php
                                 $contador = 1;
-                                foreach ($administrativos as $administrativo) {
-                                    $id_administrativo = $administrativo['id_administrativo'];
+                                foreach ($docentes as $docente) {
+                                    $id_docente = $docente['id_docente'];
                                 ?>
                                     <tr>
                                         <td><?= $contador++; ?></td>
-                                        <td><?= $administrativo['nombres'] ." ".$administrativo['apellidos'];?></td>
-                                        <td><?= $administrativo['dni']; ?></td>
-                                        <td><?= $administrativo['email']; ?></td>
-                                        <td><?= $administrativo['nombre_rol']; ?></td>
-                                        <td><?= $administrativo['celular']; ?></td>
+                                        <td><?= $docente['nombres'] ." ".$docente['apellidos'];?></td>
+                                        <td><?= $docente['dni']; ?></td>
+                                        <td><?= $docente['especialidad']; ?></td>
+                                        <td><?= $docente['email']; ?></td>
+                                        <td><?= $docente['celular']; ?></td>
                                         <td>
                                             <center>
                                                 <?php
-                                                if ($administrativo['estado'] == 1) { ?>
+                                                if ($docente['estado'] == 1) { ?>
                                                     <button class="btn btn-success" style="border-radius: 20px;">Activo</button>
                                                 <?php
                                                 } else { ?>
@@ -75,9 +75,9 @@ include('../../app/controladores/docentes/docentesListadoControlador.php')
                                         <td>
                                             <center>
                                                 <div class="btn-group" role="group" aria-label="Basic mixed styles example">
-                                                    <a href="show.php?id=<?= $id_administrativo; ?>" type="button" class="btn btn-success"><i class="bi bi-eye-fill"></i> Ver</a>
-                                                    <a href="edit.php?id=<?= $id_administrativo; ?>" type="button" class="btn btn-warning"><i class="bi bi-pencil-fill"></i> Editar</a>
-                                                    <a href="#" class="btn btn-danger" onclick="confirmarEliminacion(<?php echo $id_administrativo; ?>);">
+                                                    <a href="show.php?id=<?= $id_docente; ?>" type="button" class="btn btn-success"><i class="bi bi-eye-fill"></i> Ver</a>
+                                                    <a href="edit.php?id=<?= $id_docente; ?>" type="button" class="btn btn-warning"><i class="bi bi-pencil-fill"></i> Editar</a>
+                                                    <a href="#" class="btn btn-danger" onclick="confirmarEliminacion(<?php echo $id_docente; ?>);">
                                                         <i class="bi bi-trash3-fill"></i> Eliminar
                                                     </a>
                                                 </div>

@@ -1,7 +1,7 @@
 <?php
 include('../../app/config.php');
 include('../layout/parte1.php');
-include('../../app/controladores/roles/RolesListadoControlador.php')
+include('../../app/controladores/roles/RolesListadoControlador.php');
 ?>
 
 
@@ -19,7 +19,7 @@ include('../../app/controladores/roles/RolesListadoControlador.php')
             <div class="col-md-8">
                 <div class="card card-outline card-primary ">
                     <div class="card-header">
-                        <h1 class="">Registro de un nuevo Personal administrativo</h1>
+                        <h1 class="">Registro de un nuevo Docente</h1>
 
                     </div>
                 </div>
@@ -35,11 +35,23 @@ include('../../app/controladores/roles/RolesListadoControlador.php')
                                     <div class="form-group">
                                         <label for="">Rol</label>
 
-                                        <select class="form-control" name="rol_id">
+                                        <select class="form-control">
                                             <?php
                                             foreach ($roles as $rol) {
                                             ?>
                                                 <option disabled value="<?= $rol['id_rol']; ?>" <?= $rol['nombre_rol'] == 'Docente' ? 'selected' : ''; ?>>
+                                                    <?= $rol['nombre_rol']; ?>
+                                                </option >
+                                            <?php
+                                            }
+
+                                            ?>
+                                        </select>
+                                        <select class="form-control" name="rol_id" hidden>
+                                            <?php
+                                            foreach ($roles as $rol) {
+                                            ?>
+                                                <option  value="<?= $rol['id_rol']; ?>" <?= $rol['nombre_rol'] == 'Docente' ? 'selected' : ''; ?>>
                                                     <?= $rol['nombre_rol']; ?>
                                                 </option >
                                             <?php
@@ -99,7 +111,7 @@ include('../../app/controladores/roles/RolesListadoControlador.php')
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label for="">Cursos especialidad</label>
-                                        <input type="text" class="form-control " name="profesion" placeholder="Ingrese los cursos que enseña el docente">
+                                        <input type="text" class="form-control " name="especialidad" placeholder="Ingrese los cursos que enseña el docente">
                                     </div>
                                 </div>
                             </div>
@@ -113,7 +125,7 @@ include('../../app/controladores/roles/RolesListadoControlador.php')
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label for="">Antiguedad</label>
-                                        <input type="date" class="form-control " name="profesion" placeholder="Ingrese loa antiguedad">
+                                        <input type="number" class="form-control " name="antiguedad" placeholder="Ingrese los años de antiguedad">
                                     </div>
                                 </div>
                             </div>
@@ -122,7 +134,7 @@ include('../../app/controladores/roles/RolesListadoControlador.php')
                             <div class="row">
                                 <div class="col-md-12 d-flex justify-content-between">
                                     <a href="index.php" class="btn btn-danger"><i class="bi bi-x-circle-fill"></i> Cancelar</a>
-                                    <button type="submit" class="btn btn-primary"><i class="bi bi-floppy-fill"></i> Guardar Usuario</button>
+                                    <button type="submit" class="btn btn-primary"><i class="bi bi-floppy-fill"></i> Guardar Docente</button>
                                 </div>
                             </div>
                         </form>
