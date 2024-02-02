@@ -6,6 +6,8 @@ include('../app/controladores/usuarios/usuariosListadoControlador.php');
 include('../app/controladores/niveles/nivelesListadoControlador.php');
 include('../app/controladores/grados/gradosListadoControlador.php');
 include('../app/controladores/materias/materiasListadoControlador.php');
+include('../app/controladores/administrativos/administrativosListadoControlador.php');
+include('../app/controladores/docentes/docentesListadoControlador.php');
 ?>
 
 
@@ -87,9 +89,9 @@ include('../app/controladores/materias/materiasListadoControlador.php');
                             <p>Grados registrados</p>
                         </div>
                         <div class="icon">
-                            <i class="fas"><i class="fas fa-school"></i></i>
+                            <i class="fas"><i class="bi bi-bar-chart-steps"></i></i>
                         </div>
-                        <a href="<?= APP_URL; ?>/admin/niveles" class="small-box-footer">Más información <i class="fas fa-arrow-circle-right"></i></a>
+                        <a href="<?= APP_URL; ?>/admin/grados" class="small-box-footer">Más información <i class="fas fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
             </div>
@@ -112,8 +114,44 @@ include('../app/controladores/materias/materiasListadoControlador.php');
                         <a href="<?= APP_URL; ?>/admin/materias" class="small-box-footer">Más información <i class="fas fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
-
+                <div class="col-lg-3 col-6 ">
+                    <div class="small-box bg-danger">
+                        <div class="inner">
+                            <?php
+                            $contador = 0;
+                            foreach ($administrativos as $administrativo) {
+                                $contador++;
+                            }
+                            ?>
+                            <h3><?= $contador ?></h3>
+                            <p>Personal Administrativo registrados</p>
+                        </div>
+                        <div class="icon">
+                            <i class="fas"><i class="bi bi-person-lines-fill"></i></i>
+                        </div>
+                        <a href="<?= APP_URL; ?>/admin/administrativos" class="small-box-footer">Más información <i class="fas fa-arrow-circle-right"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-6 ">
+                    <div class="small-box bg-dark">
+                        <div class="inner">
+                            <?php
+                            $contador = 0;
+                            foreach ($docentes as $docente) {
+                                $contador++;
+                            }
+                            ?>
+                            <h3><?= $contador ?></h3>
+                            <p>Docentes registrados</p>
+                        </div>
+                        <div class="icon">
+                            <i class="fas text-white"><i class="bi bi-person-workspace"></i></i>
+                        </div>
+                        <a href="<?= APP_URL; ?>/admin/docentes" class="small-box-footer">Más información <i class="fas fa-arrow-circle-right"></i></a>
+                    </div>
+                </div>
             </div>
+
             <!-- /.row -->
         </div><!-- /.container-fluid -->
     </div>

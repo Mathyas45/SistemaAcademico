@@ -38,7 +38,6 @@ $sentencia->execute();
 ///////actualizar A LA TABLA PERSONAS
 
 $sentencia = $pdo->prepare('UPDATE personas SET nombres=:nombres, apellidos=:apellidos, dni=:dni, fecha_nacimiento=:fecha_nacimiento, celular=:celular, profesion=:profesion, direccion=:direccion, fyh_actualizacion=:fyh_actualizacion WHERE id_persona=:id_persona ');
-
 $sentencia->bindParam(':nombres', $nombres);
 $sentencia->bindParam(':apellidos', $apellidos);
 $sentencia->bindParam(':dni', $dni);

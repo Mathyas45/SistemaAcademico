@@ -1,7 +1,7 @@
 <?php
 include('../../app/config.php');
 include('../layout/parte1.php');
-include('../../app/controladores/docentes/docentesListadoControlador.php')
+include('../../app/controladores/estudiantes/estudiantesListadoControlador.php')
 ?>
 
 
@@ -19,15 +19,15 @@ include('../../app/controladores/docentes/docentesListadoControlador.php')
             <div class="col-md-10">
                 <div class="card card-outline card-primary ">
                     <div class="card-header">
-                        <h1 class="ml-4">Listado de Docentes</h1>
+                        <h1 class="ml-4">Listado de Estudiantes</h1>
 
                     </div>
                 </div>
                 <div class="card card-outline card-primary">
                     <div class="card-header">
-                        <h3 class="card-title">Docentes Registrados</h3>
+                        <h3 class="card-title">Estudiantes Registrados</h3>
                         <div class="card-tools">
-                            <a href="create.php" class="btn btn-primary"><i class="bi bi-plus-lg"></i> Crear nuevo Docente </a>
+                            <a href="create.php" class="btn btn-primary"><i class="bi bi-plus-lg"></i> Crear nuevo Estudiante </a>
                         </div>
                     </div>
                     <div class="card-body">
@@ -38,9 +38,11 @@ include('../../app/controladores/docentes/docentesListadoControlador.php')
                                     <th>Nro</th>
                                     <th>Datos Completos</th>
                                     <th>#Dni</th>
-                                    <th>Especialidad</th>
+                                    <th>F.Nacimiento</th>
                                     <th>E-mail</th>
                                     <th>#celular</th>
+                                    <th>Nivel</th>
+                                    <th>Grado</th>
                                     <th>estado</th>
                                     <th style="text-align: center;">Acciones</th>
                                 </tr>
@@ -48,20 +50,22 @@ include('../../app/controladores/docentes/docentesListadoControlador.php')
                             <tbody>
                                 <?php
                                 $contador = 1;
-                                foreach ($docentes as $docente) {
-                                    $id_docente = $docente['id_docente'];
+                                foreach ($estudiantes as $estudiante) {
+                                    $id_estudiante = $estudiante['id_estudiante'];
                                 ?>
                                     <tr>
                                         <td><?= $contador++; ?></td>
-                                        <td><?= $docente['nombres'] ." ".$docente['apellidos'];?></td>
-                                        <td><?= $docente['dni']; ?></td>
-                                        <td><?= $docente['especialidad']; ?></td>
-                                        <td><?= $docente['email']; ?></td>
-                                        <td><?= $docente['celular']; ?></td>
+                                        <td><?= $estudiante['nombres'] ." ".$estudiante['apellidos'];?></td>
+                                        <td><?= $estudiante['dni']; ?></td>
+                                        <td><?= $estudiante['fecha_nacimiento']; ?></td>
+                                        <td><?= $estudiante['email']; ?></td>
+                                        <td><?= $estudiante['celular']; ?></td>
+                                        <td><?= $estudiante['nivel']; ?></td>
+                                        <td><?= $estudiante['curso']." ".$estudiante['seccion'];?></td>
                                         <td>
                                             <center>
                                                 <?php
-                                                if ($docente['estado'] == 1) { ?>
+                                                if ($estudiante['estado'] == 1) { ?>
                                                     <button class="btn btn-success" style="border-radius: 20px;">Activo</button>
                                                 <?php
                                                 } else { ?>
@@ -75,9 +79,9 @@ include('../../app/controladores/docentes/docentesListadoControlador.php')
                                         <td>
                                             <center>
                                                 <div class="btn-group" role="group" aria-label="Basic mixed styles example">
-                                                    <a href="show.php?id=<?= $id_docente; ?>" type="button" class="btn btn-success"><i class="bi bi-eye-fill"></i> Ver</a>
-                                                    <a href="edit.php?id=<?= $id_docente; ?>" type="button" class="btn btn-warning"><i class="bi bi-pencil-fill"></i> Editar</a>
-                                                    <a href="#" class="btn btn-danger" onclick="confirmarEliminacion(<?php echo $id_docente; ?>);">
+                                                    <a href="show.php?id=<?= $id_estudiante; ?>" type="button" class="btn btn-success"><i class="bi bi-eye-fill"></i> Ver</a>
+                                                    <a href="edit.php?id=<?= $id_estudiante; ?>" type="button" class="btn btn-warning"><i class="bi bi-pencil-fill"></i> Editar</a>
+                                                    <a href="#" class="btn btn-danger" onclick="confirmarEliminacion(<?php echo $id_estudiante; ?>);">
                                                         <i class="bi bi-trash3-fill"></i> Eliminar
                                                     </a>
                                                 </div>
@@ -110,7 +114,7 @@ include('../../layout/mensajes.php');
 
 ?>
 <script>
-    function confirmarEliminacion(id_docente) {
+    function confirmarEliminacion(id_estudiante) {
         Swal.fire({
             title: "¿Seguro que desea eliminar?",
             icon: "question",
@@ -122,7 +126,7 @@ include('../../layout/mensajes.php');
         }).then((result) => {
             if (result.isConfirmed) {
                 // Redirecciona al archivo que maneja la eliminación
-                window.location.href = "delete.php?id_docente=" + id_docente;
+                window.location.href = "delete.php?id_estudiante=" + id_estudiante;
             }
         });
         return false; // Evita el comportamiento predeterminado del enlace
@@ -132,12 +136,12 @@ include('../../layout/mensajes.php');
             "pageLength": 10,
             "language": {
                 "emptyTable": "No hay información",
-                "info": "Mostrando _START_ a _END_ de _TOTAL_  Docentes",
-                "infoEmpty": "Mostrando 0 a 0 de 0  Docentes",
-                "infoFiltered": "(Filtrado de _MAX_ total  Docentes)",
+                "info": "Mostrando _START_ a _END_ de _TOTAL_  Estudiantes",
+                "infoEmpty": "Mostrando 0 a 0 de 0  Estudiantes",
+                "infoFiltered": "(Filtrado de _MAX_ total  Estudiantes)",
                 "infoPostFix": "",
                 "thousands": ",",
-                "lengthMenu": "Mostrar _MENU_  Docentes",
+                "lengthMenu": "Mostrar _MENU_  Estudiantes",
                 "loadingRecords": "Cargando...",
                 "processing": "Procesando...",
                 "search": "Buscador:",
