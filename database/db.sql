@@ -214,12 +214,9 @@ CREATE TABLE
         celular varchar(20) NULL,
         email varchar(80) NULL,
         ocupacion varchar(50) NULL,
-
-
         fyh_creacion DATETIME NULL,
         fyh_actualizacion DATETIME NULL,
         estado varchar(11),
-
         FOREIGN KEY (estudiante_id) REFERENCES estudiantes (id_estudiante) on delete cascade on update cascade
     ) ENGINE = InnoDB;
 
@@ -327,6 +324,23 @@ CREATE TABLE
         fyh_creacion DATETIME NULL,
         fyh_actualizacion DATETIME NULL,
         estado varchar(11)
+    ) ENGINE = InnoDB;
+
+INSERT INTO
+    materias (nombre_materia, fyh_creacion, estado)
+VALUES
+    ('geometria', '2023-12-20 20:29:10', '1') / / / / / / / / / / / /
+CREATE TABLE
+    pagos (
+        id_pago int (11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+        estudiante_id int (11) NOT NULL,
+        mes_pagado varchar(50) NOT NULL,
+        monto_pagado varchar(10) NOT NULL,
+        fecha_pago varchar(20) NOT NULL,
+        fyh_creacion DATETIME NULL,
+        fyh_actualizacion DATETIME NULL,
+        estado varchar(11)
+         FOREIGN KEY (estudiante_id) REFERENCES estudiantes (id_estudiante) on delete cascade on update cascade
     ) ENGINE = InnoDB;
 
 INSERT INTO

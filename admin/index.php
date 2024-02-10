@@ -8,6 +8,7 @@ include('../app/controladores/grados/gradosListadoControlador.php');
 include('../app/controladores/materias/materiasListadoControlador.php');
 include('../app/controladores/administrativos/administrativosListadoControlador.php');
 include('../app/controladores/docentes/docentesListadoControlador.php');
+include('../app/controladores/estudiantes/estudiantesListadoControlador.php');
 ?>
 
 
@@ -148,6 +149,24 @@ include('../app/controladores/docentes/docentesListadoControlador.php');
                             <i class="fas text-white"><i class="bi bi-person-workspace"></i></i>
                         </div>
                         <a href="<?= APP_URL; ?>/admin/docentes" class="small-box-footer">Más información <i class="fas fa-arrow-circle-right"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-6 ">
+                    <div class="small-box bg-teal">
+                        <div class="inner">
+                            <?php
+                            $contador = 0;
+                            foreach ($estudiantes as $estudiantes) {
+                                $contador++;
+                            }
+                            ?>
+                            <h3><?= $contador ?></h3>
+                            <p>Estudiantes registrados</p>
+                        </div>
+                        <div class="icon">
+                            <i class="fas text-white"><i class="bi bi-backpack-fill"></i></i>
+                        </div>
+                        <a href="<?= APP_URL; ?>/admin/estudiantes" class="small-box-footer">Más información <i class="fas fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
             </div>

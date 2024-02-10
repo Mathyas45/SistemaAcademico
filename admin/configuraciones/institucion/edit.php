@@ -12,7 +12,7 @@ include('../../../app/controladores/configuraciones/institucion/institucionShowC
     <!-- Main content -->
     <div class="container-fluid">
         <br>
-        <h1 class="ml-4">Editar los datos de la Institución: <?= $nombre_institucion ?></h1>
+        <h1 class="ml-4">Editar los datos de la Institución: <?= $nombre_Institucion ?></h1>
         <br>
 
         <div class="row">
@@ -30,7 +30,7 @@ include('../../../app/controladores/configuraciones/institucion/institucionShowC
                                         <div class="col-md-12">
                                             <div class="form-group">
                                                 <label for="nombre_institucion">Nombre de la Institución</label>
-                                                <input type="text" class="form-control" name="nombre_institucion" id="nombre_institucion" value="<?= $nombre_institucion; ?>" placeholder="Nombre de la Institución" required>
+                                                <input type="text" class="form-control" name="nombre_Institucion" id="nombre_Institucion" value="<?= $nombre_Institucion; ?>" placeholder="Nombre de la Institución" required>
                                                 <input type="text" class="form-control" name="id_config_institucion" id="id_config_institucion" value="<?= $id_config_institucion; ?>" hidden >
                                             </div>
                                         </div>
@@ -70,7 +70,7 @@ include('../../../app/controladores/configuraciones/institucion/institucionShowC
                                             <div class="custom-file mb-3">
                                                 <input type="file" class="custom-file-input" name="logo" id="logo">
                                                 <label class="custom-file-label" for="logo">Seleccionar Archivo</label>
-                                                <input type="text" name="logo" value="value=<?= $logo; ?>" hidden>
+                                                <input type="text" name="logo" value="<?= $logo; ?>" hidden>
                                                 <center>
                                                     <output id="list">
                                                         <img src="<?= APP_URL . "/public/images/configuracion/" . $logo; ?>" width="200px" alt="" class="mt-3">

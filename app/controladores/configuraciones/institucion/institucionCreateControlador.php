@@ -1,7 +1,7 @@
 <?php
 include('../../../config.php');
 
-$nombre_institucion = $_POST['nombre_institucion'];
+$nombre_Institucion = $_POST['nombre_Institucion'];
 $direccion = $_POST['direccion'];
 $telefono = $_POST['telefono'];
 $celular = $_POST['celular'];
@@ -17,16 +17,16 @@ if ($_FILES['logo']['name'] != null) {
 }
 
 $sentencia = $pdo->prepare('INSERT INTO configuracion_instituciones
-(nombre_institucion,logo,direccion,telefono,celular,email, fyh_creacion, estado)
-VALUES ( :nombre_institucion,:logo,:direccion,:telefono,:celular,:email,:fyh_creacion,:estado)');
+(nombre_Institucion,logo,direccion,telefono,celular,email, fyh_creacion, estado)
+VALUES ( :nombre_Institucion,:logo,:direccion,:telefono,:celular,:email,:fyh_creacion,:estado)');
 
-$sentencia->bindParam(':nombre_institucion', $nombre_institucion);
+$sentencia->bindParam(':nombre_Institucion', $nombre_Institucion);
 $sentencia->bindParam(':logo', $logo);
 $sentencia->bindParam(':direccion', $direccion);
 $sentencia->bindParam(':telefono', $telefono);
 $sentencia->bindParam(':celular', $celular);
 $sentencia->bindParam(':email', $email);
-$sentencia->bindParam('fyh_creacion', $fechayHora);
+$sentencia->bindParam('fyh_creacion', $fechayhora);
 $sentencia->bindParam('estado', $estadoRegistro);
 
 if ($sentencia->execute()) {

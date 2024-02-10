@@ -51,7 +51,7 @@ include('../../../app/controladores/configuraciones/institucion/institucionLista
                                 ?>
                                     <tr>
                                         <td><?= $contador++; ?></td>
-                                        <td><?= $institucion['nombre_institucion']; ?></td>
+                                        <td><?= $institucion['nombre_Institucion']; ?></td>
                                         <td>
                                             <img src="<?= APP_URL . "/public/images/configuracion/" . $institucion['logo']; ?>" width="100px" alt="">
                                         </td>

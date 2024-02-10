@@ -5,7 +5,7 @@ $query_instituciones = $pdo->prepare($sql_instituciones);
 $query_instituciones->execute();
 $datos_instituciones = $query_instituciones->fetchAll(PDO::FETCH_ASSOC);
 foreach ($datos_instituciones as $datos_institucion) {
-    $nombre_institucion = $datos_institucion['nombre_institucion'];
+    $nombre_Institucion = $datos_institucion['nombre_Institucion'];
     $direccion = $datos_institucion['direccion'];
     $telefono = $datos_institucion['telefono'];
     $celular = $datos_institucion['celular'];

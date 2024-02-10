@@ -260,10 +260,19 @@ if (isset($_SESSION['sesion_email'])) {
                                 </li>
 
                             </ul>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="<?= APP_URL ?>/admin/docentes/asignacion.php" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Asignacion de Materias</p>
+                                    </a>
+                                </li>
+
+                            </ul>
                         </li>
                         <li class="nav-item">
                             <a href="#" class="nav-link active">
-                                <i class="nav-icon fas"><i class="bi bi-person-workspace"></i>
+                                <i class="nav-icon fas"><i class="bi bi-backpack-fill"></i>
                                 </i>
                                 <p>
                                     Estudiantes
@@ -279,6 +288,25 @@ if (isset($_SESSION['sesion_email'])) {
                                     <a href="<?= APP_URL ?>/admin/estudiantes" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Listado de Estudiantes</p>
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link active">
+                                <i class="nav-icon fas"><i class="bi bi-cash-coin"></i>
+                                </i>
+                                <p>
+                                    Pagos
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="<?= APP_URL ?>/admin/pagos" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Realizar Pago</p>
                                     </a>
                                 </li>
 

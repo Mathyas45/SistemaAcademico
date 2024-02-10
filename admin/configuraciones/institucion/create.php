@@ -31,7 +31,7 @@ include('../../../app/controladores/roles/RolesListadoControlador.php')
                                         <div class="col-md-12">
                                             <div class="form-group">
                                                 <label for="nombre_institucion">Nombre de la Institución</label>
-                                                <input type="text" class="form-control" name="nombre_institucion" id="nombre_institucion" placeholder="Nombre de la Institución" required>
+                                                <input type="text" class="form-control" name="nombre_Institucion" id="nombre_Institucion" placeholder="Nombre de la Institución" required>
                                             </div>
                                         </div>
 
