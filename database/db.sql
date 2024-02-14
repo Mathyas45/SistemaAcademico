@@ -343,7 +343,20 @@ CREATE TABLE
          FOREIGN KEY (estudiante_id) REFERENCES estudiantes (id_estudiante) on delete cascade on update cascade
     ) ENGINE = InnoDB;
 
-INSERT INTO
-    materias (nombre_materia, fyh_creacion, estado)
-VALUES
-    ('geometria', '2023-12-20 20:29:10', '1')
+CREATE TABLE
+    asignaciones (
+        id_asignacion int (11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+        docente_id int (11) NOT NULL,
+        nivel_id int (11) NOT NULL,
+        grado_id int (11) NOT NULL,
+        materia_id int (11) NOT NULL,
+        
+
+        fyh_creacion DATETIME NULL,
+        fyh_actualizacion DATETIME NULL,
+        estado varchar(11),
+         FOREIGN KEY (docente_id) REFERENCES docentes (id_docente) on delete cascade on update cascade,
+         FOREIGN KEY (nivel_id) REFERENCES niveles (id_nivel) on delete cascade on update cascade,
+         FOREIGN KEY (grado_id) REFERENCES grados (id_grado) on delete cascade on update cascade,
+         FOREIGN KEY (materia_id) REFERENCES materias (id_materia) on delete cascade on update cascade
+    ) ENGINE = InnoDB;
