@@ -23,6 +23,9 @@ if (isset($_SESSION['sesion_email'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title><?= APP_NAME ?></title>
 
+    <!-- jQuery -->
+    <script src="<?= APP_URL; ?>/public/plugins/jquery/jquery.min.js"></script>
+    
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <!-- Font Awesome Icons -->
@@ -269,6 +272,16 @@ if (isset($_SESSION['sesion_email'])) {
                                 </li>
 
                             </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a href="<?= APP_URL ?>/admin/calificaciones" class="nav-link active">
+                                <i class="nav-icon fas"><i class="bi bi-star-fill"></i></i>
+                                <p>
+                                    Calificaciones
+
+                                </p>
+                            </a>
+
                         </li>
                         <li class="nav-item">
                             <a href="#" class="nav-link active">

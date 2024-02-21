@@ -339,8 +339,7 @@ CREATE TABLE
         fecha_pago varchar(20) NOT NULL,
         fyh_creacion DATETIME NULL,
         fyh_actualizacion DATETIME NULL,
-        estado varchar(11)
-         FOREIGN KEY (estudiante_id) REFERENCES estudiantes (id_estudiante) on delete cascade on update cascade
+        estado varchar(11) FOREIGN KEY (estudiante_id) REFERENCES estudiantes (id_estudiante) on delete cascade on update cascade
     ) ENGINE = InnoDB;
 
 CREATE TABLE
@@ -350,13 +349,32 @@ CREATE TABLE
         nivel_id int (11) NOT NULL,
         grado_id int (11) NOT NULL,
         materia_id int (11) NOT NULL,
-        
+        fyh_creacion DATETIME NULL,
+        fyh_actualizacion DATETIME NULL,
+        estado varchar(11),
+        FOREIGN KEY (docente_id) REFERENCES docentes (id_docente) on delete cascade on update cascade,
+        FOREIGN KEY (nivel_id) REFERENCES niveles (id_nivel) on delete cascade on update cascade,
+        FOREIGN KEY (grado_id) REFERENCES grados (id_grado) on delete cascade on update cascade,
+        FOREIGN KEY (materia_id) REFERENCES materias (id_materia) on delete cascade on update cascade
+    ) ENGINE = InnoDB;
+
+CREATE TABLE
+    calificaciones (
+        id_calificacion int (11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+        docente_id int (11) NOT NULL,
+        estudiante_id int (11) NOT NULL,
+        materia_id int (11) NOT NULL,
+
+        nota1 varchar(10) NOT NULL,
+        nota2 varchar(10) NOT NULL,
+        nota3 varchar(10) NOT NULL,
+        notaFinal varchar(10) NOT NULL,
 
         fyh_creacion DATETIME NULL,
         fyh_actualizacion DATETIME NULL,
         estado varchar(11),
-         FOREIGN KEY (docente_id) REFERENCES docentes (id_docente) on delete cascade on update cascade,
-         FOREIGN KEY (nivel_id) REFERENCES niveles (id_nivel) on delete cascade on update cascade,
-         FOREIGN KEY (grado_id) REFERENCES grados (id_grado) on delete cascade on update cascade,
-         FOREIGN KEY (materia_id) REFERENCES materias (id_materia) on delete cascade on update cascade
+        FOREIGN KEY (docente_id) REFERENCES docentes (id_docente) on delete cascade on update cascade,
+        FOREIGN KEY (estudiante_id) REFERENCES estudiantes (id_estudiante) on delete cascade on update cascade
+        FOREIGN KEY (materia_id) REFERENCES materias (id_materia) on delete cascade on update cascade
+
     ) ENGINE = InnoDB;
