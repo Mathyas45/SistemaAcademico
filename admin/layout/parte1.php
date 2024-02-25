@@ -281,7 +281,17 @@ if (isset($_SESSION['sesion_email'])) {
 
                                 </p>
                             </a>
-
+                        </li>
+                        <li class="nav-item">
+                            <a href="<?= APP_URL ?>/admin/kardex" class="nav-link active">
+                                <i class="nav-icon fas"><i class="bi bi-journal-check"></i>
+                                </i>
+                                <p>
+                                    Kardex
+                                   
+                                </p>
+                            </a>
+                            
                         </li>
                         <li class="nav-item">
                             <a href="#" class="nav-link active">
@@ -325,6 +335,7 @@ if (isset($_SESSION['sesion_email'])) {
 
                             </ul>
                         </li>
+                        
                         <li class="nav-item">
                             <a href="<?= APP_URL ?>/admin/configuraciones" class="nav-link active">
                                 <i class="nav-icon fas"><i class="bi bi-gear-fill"></i></i>

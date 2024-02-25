@@ -364,17 +364,31 @@ CREATE TABLE
         docente_id int (11) NOT NULL,
         estudiante_id int (11) NOT NULL,
         materia_id int (11) NOT NULL,
-
         nota1 varchar(10) NOT NULL,
         nota2 varchar(10) NOT NULL,
         nota3 varchar(10) NOT NULL,
         notaFinal varchar(10) NOT NULL,
-
         fyh_creacion DATETIME NULL,
         fyh_actualizacion DATETIME NULL,
         estado varchar(11),
         FOREIGN KEY (docente_id) REFERENCES docentes (id_docente) on delete cascade on update cascade,
-        FOREIGN KEY (estudiante_id) REFERENCES estudiantes (id_estudiante) on delete cascade on update cascade
-        FOREIGN KEY (materia_id) REFERENCES materias (id_materia) on delete cascade on update cascade
+        FOREIGN KEY (estudiante_id) REFERENCES estudiantes (id_estudiante) on delete cascade on update cascade FOREIGN KEY (materia_id) REFERENCES materias (id_materia) on delete cascade on update cascade
+    ) ENGINE = InnoDB;
 
+CREATE TABLE
+    kadexs (
+        id_kadex int (11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+        docente_id int (11) NOT NULL,
+        estudiante_id int (11) NOT NULL,
+        materia_id int (11) NOT NULL,
+        observacion varchar(255) NOT NULL,
+        nota text NOT NULL,
+        fecha DATETIME NULL,
+        
+        fyh_creacion DATETIME NULL,
+        fyh_actualizacion DATETIME NULL,
+        estado varchar(11),
+        FOREIGN KEY (docente_id) REFERENCES docentes (id_docente) on delete cascade on update cascade,
+        FOREIGN KEY (estudiante_id) REFERENCES estudiantes (id_estudiante) on delete cascade on update cascade,
+        FOREIGN KEY (materia_id) REFERENCES materias (id_materia) on delete cascade on update cascade
     ) ENGINE = InnoDB;

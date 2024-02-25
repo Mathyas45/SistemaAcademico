@@ -19,7 +19,7 @@ include('../../app/controladores/docentes/docentesAsignacionesListado.php')
             <div class="col-md-10">
                 <div class="card card-outline card-primary ">
                     <div class="card-header">
-                        <h1 class="ml-4">Grados Asignados</h1>
+                        <h1 class="ml-4">Grados Asignados para reporte de notas</h1>
 
                     </div>
                 </div>
